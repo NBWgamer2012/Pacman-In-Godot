@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://jhjcgpme0m4u"]
+
+[ext_resource type="Script" uid="uid://b8vc0nt6gaksy" path="res://player_script.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://cup3c6l40fgja" path="res://Assets/Art/Pac_Man_Assets.png" id="2_gntrk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me05n"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(48, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek0ft"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(64, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blpvf"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(80, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ds4"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(64, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0gf2"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(0, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikmlx"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(96, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe1id"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(128, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b18w"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(112, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sb4r"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(128, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smq76"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(0, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r64ao"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(16, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8ifm"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(32, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3el2"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(16, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if4i3"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(144, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fbcq"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(176, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p11h"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(160, 336, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8rfb"]
+atlas = ExtResource("2_gntrk")
+region = Rect2(176, 336, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_me05n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me05n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek0ft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blpvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12ds4")
+}],
+"loop": true,
+"name": &"down",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0gf2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikmlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe1id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b18w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sb4r")
+}],
+"loop": true,
+"name": &"left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smq76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r64ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8ifm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3el2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if4i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fbcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p11h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8rfb")
+}],
+"loop": true,
+"name": &"up",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(1, 9.901923)
+
+[node name="Player" type="CharacterBody2D" unique_id=375390295]
+z_index = 10
+script = ExtResource("1_kyqiw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=985161626]
+sprite_frames = SubResource("SpriteFrames_me05n")
+animation = &"right"
+autoplay = "idle"
+frame_progress = 0.4331793
+
+[node name="right" type="Area2D" parent="." unique_id=1589352978]
+position = Vector2(1, 0)
+
+[node name="r" type="CollisionShape2D" parent="right" unique_id=386092708]
+position = Vector2(7, 0.5)
+scale = Vector2(1, 1.15)
+shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="left" type="Area2D" parent="." unique_id=1778501714]
+position = Vector2(-16, 0)
+
+[node name="l" type="CollisionShape2D" parent="left" unique_id=1186769167]
+position = Vector2(7, 0.5)
+scale = Vector2(1, 1.15)
+shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="up" type="Area2D" parent="." unique_id=117433637]
+position = Vector2(-7, -8)
+
+[node name="u" type="CollisionShape2D" parent="up" unique_id=1738552682]
+position = Vector2(7, 0)
+rotation = 1.5707964
+scale = Vector2(1, 1.2118858)
+shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="down" type="Area2D" parent="." unique_id=119345434]
+position = Vector2(-7, 9)
+
+[node name="d" type="CollisionShape2D" parent="down" unique_id=197791790]
+position = Vector2(6.5, -1)
+rotation = 1.5707964
+scale = Vector2(1, 1.1599998)
+shape = SubResource("RectangleShape2D_kyqiw")
+
+[connection signal="area_entered" from="right" to="." method="right_collide"]
+[connection signal="area_exited" from="right" to="." method="right_out"]
+[connection signal="area_entered" from="left" to="." method="left_collide"]
+[connection signal="area_exited" from="left" to="." method="left_out"]
+[connection signal="area_entered" from="up" to="." method="up_collide"]
+[connection signal="area_exited" from="up" to="." method="up_out"]
+[connection signal="area_entered" from="down" to="." method="down_collide"]
+[connection signal="area_exited" from="down" to="." method="down_out"]
